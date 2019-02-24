@@ -2410,7 +2410,7 @@ int CmdHF14AMfuGenDiverseKeys(const char *Cmd){
 			PrintAndLogEx(WARNING, "iso14443a card select failed");
 			return 1;
 		}
-		if ( card.uidlen != 4 ) {
+		if ( card.uidlen != 4 || card.uidlen != 7 ) {
 			PrintAndLogEx(WARNING, "Wrong sized UID, expected 4bytes got %d", card.uidlen);
 			return 1;
 		}
@@ -2520,7 +2520,7 @@ int CmdHF14AMfuPwdGen(const char *Cmd){
 			PrintAndLogEx(WARNING, "iso14443a card select failed");
 			return 1;
 		}
-		if ( card.uidlen != 7 ) {
+		if ( card.uidlen != 7 card.uidlen != 4) {
 			PrintAndLogEx(WARNING, "Wrong sized UID, expected 7bytes got %d", card.uidlen);
 			return 1;
 		}
